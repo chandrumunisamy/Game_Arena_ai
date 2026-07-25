@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 000000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 9
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
+  m_AmbientEquatorColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_AmbientGroundColor: {r: 0.15, g: 0.15, b: 0.15, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.2, g: 0.2, b: 0.25, a: 1}
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 12
+  m_BakeOnSceneLoad: 0
+  m_GISettings:
+    serializedVersion: 5
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 3
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAO: 1
+    m_AOContrast: 1
+    m_Padding: 2
+    m_LightmapCompression: 0
+    m_AtlasPadding: 2
+  m_Lightmaps: []
+  m_LightmapsInfo: []
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    debug: {}
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: HubRoot
+  m_TagString: Untagged
+  m_Layer: 0
+--- !u!1 &100001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: HubCamera
+  m_TagString: MainCamera
+  m_Layer: 0
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: HubLight
+  m_TagString: Untagged
+  m_Layer: 0
+--- !u!1 &100003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Layer: 0
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: HubFloor
+  m_TagString: Untagged
+  m_Layer: 14
+--- !u!1 &100005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: HubWalls
+  m_TagString: Untagged
+  m_Layer: 14
+--- !u!1 &100006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: ForgePoint
+  m_TagString: Interactable
+  m_Layer: 0
+--- !u!1 &100007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: ArchivePoint
+  m_TagString: Interactable
+  m_Layer: 0
+--- !u!1 &100008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: ChapelPoint
+  m_TagString: Interactable
+  m_Layer: 0
+--- !u!1 &100009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: SelectionPortal
+  m_TagString: Interactable
+  m_Layer: 0
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_Name: TrainingArea
+  m_TagString: Untagged
+  m_Layer: 0

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!19 &1
+Physics2DSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 4
+  m_Gravity: {x: 0, y: -9.81}
+  m_AutoSimulation: 1
+  m_ColliderAsleepVelocity: 2
+  m_SolverIterations: 6
+  m_SolverVelocityIterations: 1
+  m_BounceThreshold: 2
+  m_QueriesHitTriggers: 1
+  m_QueriesStartInColliders: 1
+  m_ChangeStopsCallbacks: 0
+  m_CallbacksDisableOnSleep: 0
+  m_AlwaysShowColliders: 0
+  m_ShowColliderSleep: 1
+  m_ShowColliderContacts: 0
+  m_ShowColliderAABB: 0
+  m_ContactArrowScale: 0.2
+  m_ColliderAwakeColor: {r: 0, g: 0.6, b: 1, a: 1}
+  m_ColliderAsleepColor: {r: 0.2, g: 0.4, b: 0.7, a: 1}
+  m_ColliderContactColor: {r: 1, g: 0, b: 0, a: 1}
+  m_LayerCollisionMatrix:
+    0000000000000000
+    0000000000000000
+    0000000000000000

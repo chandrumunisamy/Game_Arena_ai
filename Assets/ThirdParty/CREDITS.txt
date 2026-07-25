@@ -1,0 +1,27 @@
+RELICFALL - Credits
+
+Development:
+- Game Design, Programming, Art: Relicfall Studios
+
+Third-Party Assets:
+
+Kenney (https://www.kenney.nl/) - CC0
+- Environment and UI assets
+
+Quaternius (https://quaternius.com/) - CC0  
+- Character and prop models
+
+Adobe Mixamo (https://www.mixamo.com/) - Free commercial license
+- Character animations
+
+Poly Haven (https://polyhaven.com/) - CC0
+- Textures and HDR environments
+
+Freesound (https://freesound.org/) - Various CC0/CC-BY
+- Sound effects (individual attribution in ASSET_LICENSES.md)
+
+Unity Technologies - Unity 6.3 LTS
+- Game engine and editor tools
+
+Special Thanks:
+- The roguelite community for design inspiration

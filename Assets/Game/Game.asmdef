@@ -1,0 +1,13 @@
+{
+    "name": "Relicfall.Game",
+    "rootNamespace": "Relicfall",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideLanguageVersion": "latest",
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

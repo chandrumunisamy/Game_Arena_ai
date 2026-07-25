@@ -1,0 +1,399 @@
+{
+    "name": "RELICFALLControls",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "11111111-2222-3333-4444-555555555555",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "22222222-3333-4444-5555-666666666666",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LightAttack",
+                    "type": "Button",
+                    "id": "33333333-4444-5555-6666-777777777777",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Button",
+                    "id": "44444444-5555-6666-7777-888888888888",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.6)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "55555555-6666-7777-8888-999999999999",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Parry",
+                    "type": "Button",
+                    "id": "66666666-7777-8888-9999-000000000000",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RelicAbility",
+                    "type": "Button",
+                    "id": "77777777-8888-9999-0000-111111111111",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondaryAbility",
+                    "type": "Button",
+                    "id": "88888888-9999-0000-1111-222222222222",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ultimate",
+                    "type": "Button",
+                    "id": "99999999-0000-1111-2222-333333333333",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "00000000-1111-2222-3333-444444444444",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RunInfo",
+                    "type": "Button",
+                    "id": "11111110-2222-3333-4444-555555555550",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WASD",
+                    "id": "b0000001",
+                    "path": "CompositeBinding/Dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "compositeBindings": [
+                        { "name": "Up", "path": "<Keyboard>/w", "groups": "Keyboard" },
+                        { "name": "Down", "path": "<Keyboard>/s", "groups": "Keyboard" },
+                        { "name": "Left", "path": "<Keyboard>/a", "groups": "Keyboard" },
+                        { "name": "Right", "path": "<Keyboard>/d", "groups": "Keyboard" }
+                    ]
+                },
+                {
+                    "name": "ControllerMove",
+                    "id": "b0000002",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(lower=0.1,upper=0.9)",
+                    "groups": "Controller",
+                    "action": "Move"
+                },
+                {
+                    "name": "MouseLook",
+                    "id": "b0000003",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Look"
+                },
+                {
+                    "name": "ControllerLook",
+                    "id": "b0000004",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(lower=0.1,upper=0.9)",
+                    "groups": "Controller",
+                    "action": "Look"
+                },
+                {
+                    "id": "b0000005",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "LightAttack"
+                },
+                {
+                    "id": "b0000006",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "LightAttack"
+                },
+                {
+                    "id": "b0000007",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Hold(duration=0.6)",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "HeavyAttack"
+                },
+                {
+                    "id": "b0000008",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Hold(duration=0.6)",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "HeavyAttack"
+                },
+                {
+                    "id": "b0000009",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Dash"
+                },
+                {
+                    "id": "b0000010",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Dash"
+                },
+                {
+                    "id": "b0000011",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Parry"
+                },
+                {
+                    "id": "b0000012",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Parry"
+                },
+                {
+                    "id": "b0000013",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "RelicAbility"
+                },
+                {
+                    "id": "b0000014",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "RelicAbility"
+                },
+                {
+                    "id": "b0000015",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "SecondaryAbility"
+                },
+                {
+                    "id": "b0000016",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "SecondaryAbility"
+                },
+                {
+                    "id": "b0000017",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Ultimate"
+                },
+                {
+                    "id": "b0000018",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Ultimate"
+                },
+                {
+                    "id": "b0000019",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact"
+                },
+                {
+                    "id": "b0000020",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Interact"
+                },
+                {
+                    "id": "b0000021",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "RunInfo"
+                },
+                {
+                    "id": "b0000022",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "RunInfo"
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "c1d2e3f4-a5b6-7890-cdef-012345678901",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "aaaa0000-bbbb1111-cccc2222-dddd3333",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Navigate",
+                    "type": "Value",
+                    "id": "aaaa0001-bbbb1111-cccc2222-dddd3334",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "aaaa0002-bbbb1111-cccc2222-dddd3335",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "aaaa0003-bbbb1111-cccc2222-dddd3336",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "id": "c0000001",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Pause"
+                },
+                {
+                    "id": "c0000002",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Pause"
+                },
+                {
+                    "id": "c0000003",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(lower=0.1,upper=0.9)",
+                    "groups": "Controller",
+                    "action": "Navigate"
+                },
+                {
+                    "id": "c0000004",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Submit"
+                },
+                {
+                    "id": "c0000005",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Cancel"
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "KeyboardMouse",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                { "devicePath": "<Keyboard>", "isOptional": false },
+                { "devicePath": "<Mouse>", "isOptional": false }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                { "devicePath": "<Gamepad>", "isOptional": false }
+            ]
+        }
+    ]
+}
