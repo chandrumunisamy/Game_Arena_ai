@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!196 &1
+NavMeshProjectSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Areas:
+  - name: Walkable
+    cost: 1
+  - name: Not Walkable
+    cost: 1
+  - name: Jump
+    cost: 2
+  - name: Climb
+    cost: 3
+  - name: Water
+    cost: 4
+  - name: Door
+    cost: 5
+  m_AreaCount: 6
+  m_Obstacles:
+  - name: Default
+    cost: 3
+  m_AgentTypeIDToNameMap:
+    0: Humanoid
+  m_Settings:
+  - agentRadius: 0.5
+    agentHeight: 1.8
+    agentSlope: 45
+    agentClimb: 0.4
+    agentStepHeight: 0.15
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+  m_SettingCount: 1

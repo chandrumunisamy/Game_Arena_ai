@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!11 &1
+AudioManager:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Volume: 1
+  m_RolloffScale: 1
+  m_DSPBufferSize: 1024
+  m_VirtualVoiceCount: 512
+  m_RealVoiceCount: 32
+  m_SpatializerPlugin: 
+  m_AmbisonicPlugin: 
+  m_DisableAudio: 0
+  m_3DAudio: 0

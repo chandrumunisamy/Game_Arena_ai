@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 26
+  productGUID: 5a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d
+  productName: RELICFALL
+  companyName: Relicfall Studios
+  defaultScreenWidth: 1920
+  defaultScreenHeight: 1080
+  defaultScreenWidthWeb: 1920
+  defaultScreenHeightWeb: 1080
+  m_ScriptingBackend: 0
+  m_ScriptingRuntimeVersion: 1
+  m_RenderingPath: 1
+  targetDevice: 2
+  targetGraphicsAPI: 0
+  m_AllowGraphicsAPIChanging: 1
+  m_ColorSpace: 1
+  m_ActiveColorSpace: 1
+  m_MTRendering: 1
+  m_StripShaderVariants: 1
+  m_StripUnusedVariants: 1
+  m_RunInBackground: 1
+  m_FullscreenMode: 1
+  m_SplashScreenBackgroundColor: {r: 0.04, g: 0.04, b: 0.06, a: 1}
+  bundleVersion: 0.1.0
+  m_ApplicationIdentifier: com.relicfallstudios.relicfall
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 0100000015000000
+    m_Automatic: 1
+  m_BuildTargetVRSettings: []
+  m_BuildTargetEnableVr: []
+  m_DefaultGraphicsAPIs:
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 0100000015000000
+    m_Automatic: 1
+  m_DevMode: 0
+  resolutionDialogSetting: 0
+  m_SupportedAspectModes: []
+  m_SensorAidedOrientation: 0
+  m_Orientation: 0
+  useOnScreenKeyboard: 0
+  m_GamepadSupported: 1
+  m_GamepadNumber: -1
