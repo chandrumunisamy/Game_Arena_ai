@@ -412,7 +412,7 @@ namespace Relicfall.Bosses
         /// <summary>
         /// Set corruption level affecting boss behavior.
         /// </summary>
-        public void SetCorruption(float level)
+        public override void SetCorruption(float level)
         {
             _corruptionLevel = level;
 

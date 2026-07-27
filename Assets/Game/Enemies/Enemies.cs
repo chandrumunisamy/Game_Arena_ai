@@ -345,7 +345,7 @@ namespace Relicfall.Enemies
         /// <summary>
         /// Set corruption level affecting this enemy.
         /// </summary>
-        public void SetCorruption(float level)
+        public virtual void SetCorruption(float level)
         {
             _corruptionLevel = level;
 
