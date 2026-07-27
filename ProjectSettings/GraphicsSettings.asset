@@ -22,7 +22,7 @@ GraphicsSettings:
   m_PostProcessing:
     m_Mode: 1
     m_Shader: {fileID: 0}
-  m_CustomRenderPipeline: {fileID: 11400000, guid: a0000000000000000f000000000000000, type: 2}
+  m_CustomRenderPipeline: {fileID: 0}
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 0, z: 1}
   m_DefaultRenderingPath: 1

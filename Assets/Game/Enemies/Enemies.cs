@@ -249,6 +249,15 @@ namespace Relicfall.Enemies
             InitializeState(EnemyState.Spawn);
         }
 
+        /// <summary>Updates shared enemy AI. Bosses extend this through UpdateBossSpecific.</summary>
+        protected virtual void Update()
+        {
+            UpdateCurrentState();
+            UpdateBossSpecific();
+        }
+
+        protected virtual void UpdateBossSpecific() { }
+
         private void FindPlayer()
         {
             var player = GameObject.FindGameObjectWithTag("Player");
@@ -337,7 +346,7 @@ namespace Relicfall.Enemies
         /// <summary>
         /// Set corruption level affecting this enemy.
         /// </summary>
-        public void SetCorruption(float level)
+        public virtual void SetCorruption(float level)
         {
             _corruptionLevel = level;
 

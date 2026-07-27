@@ -33,7 +33,7 @@ QualitySettings:
     asyncTextureTimeUpload: 2
     asyncGPUTimeUpload: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 0000000000000000f000000000000000, type: 2}
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - name: Medium
     pixelLightCount: 2
@@ -62,7 +62,7 @@ QualitySettings:
     asyncTextureTimeUpload: 2
     asyncGPUTimeUpload: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 0000000000000000f000000000000000, type: 2}
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - name: High
     pixelLightCount: 3
@@ -91,6 +91,6 @@ QualitySettings:
     asyncTextureTimeUpload: 2
     asyncGPUTimeUpload: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 0000000000000000f000000000000000, type: 2}
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality: {}

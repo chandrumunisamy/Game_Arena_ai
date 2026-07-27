@@ -4,8 +4,8 @@ using Relicfall.Core.Events;
 using Relicfall.Combat;
 using Relicfall.Corruption;
 using Relicfall.Enemies;
-using Relicfall.Relics;
 using Relicfall.Runs;
+using Relicfall.Relics;
 
 namespace Relicfall.Bosses
 {
@@ -119,7 +119,7 @@ namespace Relicfall.Bosses
         [Header("Boss Definition")]
         [SerializeField] private BossDefinition _bossDefinition;
 
-        private int _currentPhase = 0;
+        protected int _currentPhase = 0;
         private float _phaseTransitionTimer;
         private bool _isInPhaseTransition;
         private float _signatureAttackCooldownTimer;
@@ -146,13 +146,7 @@ namespace Relicfall.Bosses
                 _healthComponent.SetMaxHealth(health);
         }
 
-        private void Update()
-        {
-            UpdateCurrentState();
-            UpdateBossSpecific();
-        }
-
-        protected virtual void UpdateBossSpecific()
+        protected override void UpdateBossSpecific()
         {
             // Check phase transitions
             if (!_isInPhaseTransition && _bossDefinition?.Phases != null)
@@ -246,6 +240,12 @@ namespace Relicfall.Bosses
             StartSignatureTelegraph(telegraphDuration);
 
             CombatFeedback.Instance.TriggerCameraShake(0.3f, 4f);
+        }
+
+        private void SetIFrames(float duration)
+        {
+            // Boss transition invulnerability is represented by the transition state.
+            // HealthComponent has no invulnerability API, so damage handlers can query this state.
         }
 
         private void StartSignatureTelegraph(float duration)
@@ -414,7 +414,7 @@ namespace Relicfall.Bosses
         /// <summary>
         /// Set corruption level affecting boss behavior.
         /// </summary>
-        public void SetCorruption(float level)
+        public override void SetCorruption(float level)
         {
             _corruptionLevel = level;
 
