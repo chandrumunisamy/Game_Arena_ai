@@ -45,3 +45,5 @@ PlayerSettings:
   useOnScreenKeyboard: 0
   m_GamepadSupported: 1
   m_GamepadNumber: -1
+
+  activeInputHandler: 2

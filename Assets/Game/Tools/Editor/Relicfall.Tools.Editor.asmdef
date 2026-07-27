@@ -1,0 +1,13 @@
+{
+  "name": "Relicfall.Tools.Editor",
+  "rootNamespace": "Relicfall.Tools",
+  "references": ["Relicfall.Game"],
+  "includePlatforms": ["Editor"],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideLanguageVersion": "latest",
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

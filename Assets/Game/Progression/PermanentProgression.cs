@@ -62,7 +62,7 @@ namespace Relicfall.Progression
         /// <summary>
         /// Initialize progression from saved data.
         /// </summary>
-        public void InitializeFromSave(ProgressionSaveData? saveData)
+        public void InitializeFromSave(ProgressionSaveData saveData)
         {
             if (saveData == null)
             {
@@ -74,7 +74,7 @@ namespace Relicfall.Progression
                 return;
             }
 
-            var data = saveData.Value;
+            var data = saveData;
             RunsCompleted = data.RunsCompleted;
             BossesDefeated = data.BossesDefeated;
             Currency = data.Currency;

@@ -8,6 +8,7 @@ using Relicfall.Corruption;
 using Relicfall.Relics;
 using Relicfall.Runs;
 using Relicfall.Combat;
+using Relicfall.Bosses;
 
 namespace Relicfall.UI
 {

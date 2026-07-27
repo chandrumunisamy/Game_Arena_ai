@@ -6,6 +6,7 @@ using Relicfall.Runs;
 using Relicfall.Enemies;
 using Relicfall.Relics;
 using Relicfall.Combat;
+using Relicfall.Player;
 
 namespace Relicfall.Rooms
 {
