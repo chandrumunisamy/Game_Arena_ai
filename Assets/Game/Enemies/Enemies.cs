@@ -4,6 +4,7 @@ using Relicfall.Core.Events;
 using Relicfall.Core.Utils;
 using Relicfall.Combat;
 using Relicfall.Corruption;
+using Relicfall.Player;
 
 namespace Relicfall.Enemies
 {
@@ -32,6 +33,7 @@ namespace Relicfall.Enemies
         public float BaseSpeed = 2f;
         public float StaggerThreshold = 30f;
         public float StaggerDuration = 2f;
+        public float StaggerDamageMultiplier = 1f;
         public float DetectionRange = 8f;
         public float AttackRange = 1.5f;
         public float AttackCooldownMin = 0.8f;
@@ -170,7 +172,7 @@ namespace Relicfall.Enemies
 
         [Header("Components")]
         [SerializeField] private Animator _animator;
-        [SerializeField] private HealthComponent _healthComponent;
+        [SerializeField] protected HealthComponent _healthComponent;
         [SerializeField] private StaggerComponent _staggerComponent;
         [SerializeField] private HitboxManager _hitboxManager;
         [SerializeField] private EnemyMarker _marker;
@@ -254,7 +256,7 @@ namespace Relicfall.Enemies
                 _target = player.transform;
         }
 
-        private void InitializeStats()
+        protected virtual void InitializeStats()
         {
             if (_definition == null) return;
 
@@ -373,7 +375,7 @@ namespace Relicfall.Enemies
             SetState(state);
         }
 
-        private void SetState(EnemyState newState)
+        protected void SetState(EnemyState newState)
         {
             if (_currentState == newState) return;
             if (_currentState == EnemyState.Death) return;
@@ -471,7 +473,7 @@ namespace Relicfall.Enemies
             }
         }
 
-        private void UpdateCurrentState()
+        protected void UpdateCurrentState()
         {
             float dt = Time.deltaTime;
             _stateTimer += dt;
@@ -1048,7 +1050,7 @@ namespace Relicfall.Enemies
         /// <summary>
         /// Handle incoming damage with hit reactions, stagger, and parry checks.
         /// </summary>
-        public void ReceiveDamage(float damage, Vector3 hitDirection, string source, int attackerId, bool isCritical = false)
+        public virtual void ReceiveDamage(float damage, Vector3 hitDirection, string source, int attackerId, bool isCritical = false)
         {
             if (!IsAlive) return;
 
@@ -1118,7 +1120,7 @@ namespace Relicfall.Enemies
 
         #region Death
 
-        private void TriggerDeath()
+        protected virtual void TriggerDeath()
         {
             _marker.IsAlive = false;
 

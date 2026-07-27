@@ -126,6 +126,7 @@ namespace Relicfall.Relics
         EnvironmentalVFX,
         MusicModifier,
         RewardModifier,
+        CorruptionModifier,
         CustomBehavior
     }
 
@@ -190,6 +191,21 @@ namespace Relicfall.Relics
         {
             _player = GetComponent<Player.PlayerController>();
             EventBus.Subscribe<RelicCollectedEvent>(OnRelicCollected);
+        }
+
+        private void OnDestroy()
+        {
+            EventBus.Unsubscribe<RelicCollectedEvent>(OnRelicCollected);
+        }
+
+        /// <summary>
+        /// React to a relic being collected elsewhere in the game (pickups, rewards).
+        /// The relic itself is applied through CollectRelic; this only tracks discovery.
+        /// </summary>
+        private void OnRelicCollected(RelicCollectedEvent e)
+        {
+            if (!string.IsNullOrEmpty(e.RelicId))
+                _discoveredRelics.Add(e.RelicId);
         }
 
         /// <summary>

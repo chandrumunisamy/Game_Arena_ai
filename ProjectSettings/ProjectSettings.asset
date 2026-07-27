@@ -26,7 +26,8 @@ PlayerSettings:
   m_FullscreenMode: 1
   m_SplashScreenBackgroundColor: {r: 0.04, g: 0.04, b: 0.06, a: 1}
   bundleVersion: 0.1.0
-  m_ApplicationIdentifier: com.relicfallstudios.relicfall
+  m_ApplicationIdentifier:
+    Standalone: com.relicfallstudios.relicfall
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: WindowsStandaloneSupport
     m_APIs: 0100000015000000
@@ -45,3 +46,4 @@ PlayerSettings:
   useOnScreenKeyboard: 0
   m_GamepadSupported: 1
   m_GamepadNumber: -1
+  activeInputHandler: 2

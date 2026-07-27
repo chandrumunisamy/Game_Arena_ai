@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Relicfall.Core.Events;
 using Relicfall.Corruption;
 using Relicfall.Relics;
+using Relicfall.Enemies;
 
 namespace Relicfall.Runs
 {

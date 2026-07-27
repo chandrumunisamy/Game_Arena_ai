@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
 using Relicfall.Core;
@@ -9,6 +10,7 @@ using Relicfall.Core.Utils;
 using Relicfall.Player;
 using Relicfall.Combat;
 using Relicfall.Corruption;
+using Relicfall.Enemies;
 using Relicfall.Relics;
 using Relicfall.Runs;
 using Relicfall.Rooms;
@@ -305,7 +307,7 @@ namespace Relicfall.Core
             light.color = _ambientColor;
             light.intensity = _lightIntensity;
             light.shadows = LightShadows.Soft;
-            light.shadowResolution = UnityEngine.LightShadowResolution.Medium;
+            light.shadowResolution = UnityEngine.Rendering.LightShadowResolution.Medium;
             lightObj.transform.rotation = Quaternion.Euler(_lightDirection);
 
             // Ambient light
@@ -328,7 +330,7 @@ namespace Relicfall.Core
             light.color = new Color(0.25f, 0.15f, 0.2f);
             light.intensity = 0.8f;
             light.shadows = LightShadows.Soft;
-            light.shadowResolution = UnityEngine.LightShadowResolution.High;
+            light.shadowResolution = UnityEngine.Rendering.LightShadowResolution.High;
             lightObj.transform.rotation = Quaternion.Euler(60f, -45f, -30f);
 
             // Point light for boss glow

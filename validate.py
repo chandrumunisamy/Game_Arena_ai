@@ -256,7 +256,7 @@ def main():
         "Assets/Game/Tests",
         "Assets/Art/Characters",
         "Assets/Art/Environments",
-        "Assets/Art/VFX",
+        "Assets/Game/VFX",
         "Assets/Art/Materials",
         "Assets/Scenes",
         "Assets/ThirdParty",

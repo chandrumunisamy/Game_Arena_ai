@@ -1,11 +1,13 @@
 using UnityEngine;
 using Relicfall.Core.Events;
 using Relicfall.Core.Utils;
+using Relicfall.Combat;
 using Relicfall.Corruption;
 using Relicfall.Runs;
 using Relicfall.Player;
 using Relicfall.Saving;
 using Relicfall.Audio;
+using Relicfall.Progression;
 using Relicfall.UI;
 
 namespace Relicfall.Core
@@ -257,6 +259,14 @@ namespace Relicfall.Core
         public bool VibrationEnabled { get; private set; } = true;
 
         /// <summary>
+        /// Enable or disable controller vibration (used by SettingsManager).
+        /// </summary>
+        public void SetVibration(bool enabled)
+        {
+            VibrationEnabled = enabled;
+        }
+
+        /// <summary>
         /// Set the save manager reference (called by SceneBootstrap).
         /// </summary>
         public void SetSaveManager(SaveManager saveManager)
@@ -276,7 +286,8 @@ namespace Relicfall.Core
             if (!_initialized) return;
 
             // Handle pause input
-            if (UnityEngine.InputSystem.InputSystem.GetKeyDown(UnityEngine.InputSystem.Key.Escape))
+            var keyboard = UnityEngine.InputSystem.Keyboard.current;
+            if (keyboard != null && keyboard.escapeKey.wasPressedThisFrame)
             {
                 TogglePause();
             }

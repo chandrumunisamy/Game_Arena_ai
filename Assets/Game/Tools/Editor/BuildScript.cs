@@ -1,7 +1,6 @@
+using UnityEngine;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
-
-using System;
 
 namespace Relicfall.Tools
 {
@@ -26,19 +25,19 @@ namespace Relicfall.Tools
             BuildPlayerOptions playerOptions = new BuildPlayerOptions();
             playerOptions.scenes = Scenes;
             playerOptions.target = BuildTarget.StandaloneWindows64;
-            playerOptions.locationPathName = BuildPath;
+            playerOptions.locationPathName = BuildPath + ".exe";
             playerOptions.options = BuildOptions.None;
 
-            BuildResult result = BuildPipeline.BuildPlayer(playerOptions);
+            BuildReport report = BuildPipeline.BuildPlayer(playerOptions);
 
-            if (result.steps.Length == 0)
+            if (report == null || report.summary.result != BuildResult.Succeeded)
             {
                 Debug.LogError("Build failed!");
                 return;
             }
 
             Debug.Log($"Build succeeded: {BuildPath}");
-            Debug.Log($"Total steps: {result.steps.Length}");
+            Debug.Log($"Total steps: {report.steps.Length}");
         }
 
         [MenuItem("Build/Validate RELICFALL Build")]

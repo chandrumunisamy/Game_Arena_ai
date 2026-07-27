@@ -1,13 +1,9 @@
 {
   "dependencies": {
-    "com.unity.render-pipelines.universal": "17.0.3",
-    "com.unity.inputsystem": "1.11.2",
-    "com.unity.textmeshpro": "3.0.9",
-    "com.unity.probuilder": "6.0.5",
-    "com.unity.timeline": "1.9.3",
-    "com.unity.cinemachine": "3.1.2",
-    "com.unity.ide.vscode": "1.2.5",
-    "com.unity.test-framework": "1.5.1",
+    "com.unity.render-pipelines.universal": "17.3.0",
+    "com.unity.inputsystem": "1.20.0",
+    "com.unity.ugui": "2.0.0",
+    "com.unity.test-framework": "1.6.0",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.audio": "1.0.0",
     "com.unity.modules.physics": "1.0.0",

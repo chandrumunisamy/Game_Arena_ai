@@ -118,7 +118,7 @@ namespace Relicfall.Core.Pooling
 
         private GameObject CreateNew()
         {
-            var obj = Object.Instantiate(_prefab, _poolRoot);
+            var obj = UnityEngine.Object.Instantiate(_prefab, _poolRoot);
             obj.name = $"{_prefab.name}_pooled_{_currentSize}";
             _currentSize++;
 

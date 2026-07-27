@@ -163,6 +163,19 @@ namespace Relicfall.Saving
         }
 
         /// <summary>
+        /// Handle an external save request published on the EventBus.
+        /// </summary>
+        private void OnSaveRequested(SaveRequestedEvent e)
+        {
+            if (CurrentData == null) return;
+
+            if (e.IsAutoSave)
+                AutoSave();
+            else
+                SaveGame(CurrentData);
+        }
+
+        /// <summary>
         /// Create a new save data for a fresh game.
         /// </summary>
         private SaveData CreateNewSave()
@@ -189,7 +202,7 @@ namespace Relicfall.Saving
         /// <summary>
         /// Migrate save data between versions.
         /// </summary>
-        private SaveData MigrateSave(SaveData data, int fromVersion, int toVersion)
+        public SaveData MigrateSave(SaveData data, int fromVersion, int toVersion)
         {
             for (int v = fromVersion; v < toVersion; v++)
             {
@@ -420,6 +433,7 @@ namespace Relicfall.Saving
         public List<string> UnlockedDialogue = new();
         public string CurrentRealmPreference;
         public int BossEncountersWithSameBoss;
+        public string LastDeathCause;
     }
 
     [Serializable]

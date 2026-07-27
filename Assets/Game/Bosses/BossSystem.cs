@@ -4,6 +4,8 @@ using Relicfall.Core.Events;
 using Relicfall.Combat;
 using Relicfall.Corruption;
 using Relicfall.Enemies;
+using Relicfall.Relics;
+using Relicfall.Runs;
 
 namespace Relicfall.Bosses
 {
@@ -150,7 +152,7 @@ namespace Relicfall.Bosses
             UpdateBossSpecific();
         }
 
-        private void UpdateBossSpecific()
+        protected virtual void UpdateBossSpecific()
         {
             // Check phase transitions
             if (!_isInPhaseTransition && _bossDefinition?.Phases != null)
@@ -263,7 +265,7 @@ namespace Relicfall.Bosses
 
         #region Arena Mechanics
 
-        private void ActivateArenaMechanic(ArenaMechanic mechanic)
+        protected void ActivateArenaMechanic(ArenaMechanic mechanic)
         {
             _activeMechanics.Add(mechanic);
 
@@ -483,7 +485,7 @@ namespace Relicfall.Bosses
         /// </summary>
         public void RelicCounterAttack()
         {
-            var relicManager = FindObjectOfType<RelicManager>();
+            var relicManager = FindFirstObjectByType<RelicManager>();
             if (relicManager == null) return;
 
             var tags = relicManager.GetActiveTags();
@@ -766,7 +768,7 @@ namespace Relicfall.Bosses
         /// </summary>
         private void AdaptToPlayerBuild()
         {
-            var relicManager = FindObjectOfType<RelicManager>();
+            var relicManager = FindFirstObjectByType<RelicManager>();
             if (relicManager == null) return;
 
             var tags = relicManager.GetActiveTags();

@@ -253,8 +253,9 @@ namespace Relicfall.Player
                 {
                     var groundPoint = ray.GetPoint(distance);
                     var playerPos = transform.position;
-                    AimDirectionWorld = (groundPoint - playerPos).normalized;
-                    AimDirectionWorld.y = 0f;
+                    var aimDirection = (groundPoint - playerPos).normalized;
+                    aimDirection.y = 0f;
+                    AimDirectionWorld = aimDirection.normalized;
                 }
                 else
                 {
