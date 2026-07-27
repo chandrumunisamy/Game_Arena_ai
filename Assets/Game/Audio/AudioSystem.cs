@@ -37,7 +37,6 @@ namespace Relicfall.Audio
             EventBus.Subscribe<MusicLayerEvent>(OnMusicLayerEvent);
             EventBus.Subscribe<EnemyDeathEvent>(OnEnemyDeath);
             EventBus.Subscribe<PlayerDeathEvent>(OnPlayerDeath);
-            EventBus.Subscribe<SFXPlayEvent>(OnSFXPlayEvent);
         }
 
         private void OnDestroy()
@@ -45,7 +44,6 @@ namespace Relicfall.Audio
             EventBus.Unsubscribe<MusicLayerEvent>(OnMusicLayerEvent);
             EventBus.Unsubscribe<EnemyDeathEvent>(OnEnemyDeath);
             EventBus.Unsubscribe<PlayerDeathEvent>(OnPlayerDeath);
-            EventBus.Unsubscribe<SFXPlayEvent>(OnSFXPlayEvent);
         }
 
         /// <summary>

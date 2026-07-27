@@ -8,6 +8,8 @@ using Relicfall.Corruption;
 using Relicfall.Relics;
 using Relicfall.Runs;
 using Relicfall.Combat;
+using Relicfall.Saving;
+using Relicfall.Audio;
 using Relicfall.Bosses;
 
 namespace Relicfall.UI
@@ -218,7 +220,7 @@ namespace Relicfall.UI
         private void UpdateBossHealthBar()
         {
             // Find active boss and update its health bar
-            var boss = FindObjectOfType<BossController>();
+            var boss = FindFirstObjectByType<BossController>();
             if (boss != null && boss.IsAlive)
             {
                 ShowBossHealthBar(boss.BossDef?.BossName ?? "Unknown", boss.HealthPercent);
@@ -650,19 +652,19 @@ namespace Relicfall.UI
             var settings = Core.GameManager.Instance?.GetComponent<SaveManager>()?.CurrentData?.Settings;
             if (settings != null)
             {
-                _masterVolumeSlider.value = settings.Value.MasterVolume;
-                _musicVolumeSlider.value = settings.Value.MusicVolume;
-                _sfxVolumeSlider.value = settings.Value.SFXVolume;
-                _screenShakeSlider.value = settings.Value.ScreenShakeIntensity;
-                _vibrationToggle.isOn = settings.Value.VibrationEnabled;
-                _aimAssistSlider.value = settings.Value.AimAssistStrength;
+                _masterVolumeSlider.value = settings.MasterVolume;
+                _musicVolumeSlider.value = settings.MusicVolume;
+                _sfxVolumeSlider.value = settings.SFXVolume;
+                _screenShakeSlider.value = settings.ScreenShakeIntensity;
+                _vibrationToggle.isOn = settings.VibrationEnabled;
+                _aimAssistSlider.value = settings.AimAssistStrength;
             }
         }
 
         private void ApplySettings()
         {
             // Apply all settings to game systems
-            var sfxManager = FindObjectOfType<SFXManager>();
+            var sfxManager = FindFirstObjectByType<SFXManager>();
             if (sfxManager != null)
                 sfxManager.SetMasterVolume(_masterVolumeSlider.value);
         }
@@ -759,7 +761,7 @@ namespace Relicfall.UI
         private void SelectRelic(RelicDefinition relic)
         {
             _rewardPanel.SetActive(false);
-            var relicManager = FindObjectOfType<RelicManager>();
+            var relicManager = FindFirstObjectByType<RelicManager>();
             relicManager?.CollectRelic(relic);
         }
     }

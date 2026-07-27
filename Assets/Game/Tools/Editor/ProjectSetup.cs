@@ -20,8 +20,12 @@ namespace Relicfall.Tools
             if (pipeline != null)
             {
                 GraphicsSettings.defaultRenderPipeline = pipeline;
+                QualitySettings.renderPipeline = pipeline;
                 return;
             }
+
+            if (!AssetDatabase.IsValidFolder("Assets/Art/Materials"))
+                AssetDatabase.CreateFolder("Assets/Art", "Materials");
 
             AssetDatabase.DeleteAsset(RendererPath);
             AssetDatabase.DeleteAsset(PipelinePath);
@@ -30,6 +34,7 @@ namespace Relicfall.Tools
             pipeline = UniversalRenderPipelineAsset.Create(rendererData);
             AssetDatabase.CreateAsset(pipeline, PipelinePath);
             GraphicsSettings.defaultRenderPipeline = pipeline;
+            QualitySettings.renderPipeline = pipeline;
             AssetDatabase.SaveAssets();
             Debug.Log("RELICFALL: created valid Universal Render Pipeline assets.");
         }

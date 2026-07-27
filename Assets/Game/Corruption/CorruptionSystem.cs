@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Relicfall.Core.Events;
+using Relicfall.Relics;
 
 namespace Relicfall.Corruption
 {

@@ -4,6 +4,7 @@ using Relicfall.Core.Events;
 using Relicfall.Core.Utils;
 using Relicfall.Combat;
 using Relicfall.Corruption;
+using Relicfall.Player;
 
 namespace Relicfall.Enemies
 {
@@ -481,7 +482,7 @@ namespace Relicfall.Enemies
             }
         }
 
-        private void UpdateCurrentState()
+        protected void UpdateCurrentState()
         {
             float dt = Time.deltaTime;
             _stateTimer += dt;
@@ -1058,7 +1059,7 @@ namespace Relicfall.Enemies
         /// <summary>
         /// Handle incoming damage with hit reactions, stagger, and parry checks.
         /// </summary>
-        public void ReceiveDamage(float damage, Vector3 hitDirection, string source, int attackerId, bool isCritical = false)
+        public virtual void ReceiveDamage(float damage, Vector3 hitDirection, string source, int attackerId, bool isCritical = false)
         {
             if (!IsAlive) return;
 
@@ -1128,7 +1129,7 @@ namespace Relicfall.Enemies
 
         #region Death
 
-        private void TriggerDeath()
+        protected virtual void TriggerDeath()
         {
             _marker.IsAlive = false;
 

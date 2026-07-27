@@ -9,12 +9,6 @@ using Relicfall.Combat;
 using Relicfall.Corruption;
 
 using Relicfall.Enemies;
-using Relicfall.Runs;
-
-
-using UnityEngine.Rendering;
-
-using UnityEngine.Rendering.Universal;
 
 namespace Relicfall.VFX
 {
@@ -54,7 +48,7 @@ namespace Relicfall.VFX
         private Dictionary<string, GameObjectPool> _vfxPools = new();
 
         public void PlayImpactEffect(ImpactType type, Vector3 position, Vector3 direction)
-  {
+        {
             CombatFeedback.Instance.SpawnImpactEffect(type, position, direction);
         }
 
@@ -76,7 +70,7 @@ namespace Relicfall.VFX
             var trailObj = pool.Get(start, Quaternion.LookRotation(end - start));
             if (trailObj != null)
             {
-                var trailRenderer = trailObj.GetComponent<TrailRenderer>();
+                var trailRenderer = trailObj.GetComponent<WeaponTrailRenderer>();
                 if (trailRenderer != null)
                     trailRenderer.SetPositions(start, end);
             }
@@ -138,7 +132,7 @@ namespace Relicfall.VFX
     /// <summary>
     /// Simple trail renderer for weapon slashes.
     /// </summary>
-    public class TrailRenderer : MonoBehaviour
+    public class WeaponTrailRenderer : MonoBehaviour
     {
         [SerializeField] private float _trailDuration = 0.3f;
         [SerializeField] private float _trailWidth = 0.1f;

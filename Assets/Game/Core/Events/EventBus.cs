@@ -137,7 +137,7 @@ namespace Relicfall.Core.Events
     {
         public UnityEngine.Vector3 DeathPosition;
         public string DeathCause;
-        public int RunDurationSeconds;
+        public float RunDurationSeconds;
     }
 
     // Player Events

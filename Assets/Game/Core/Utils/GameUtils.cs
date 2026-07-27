@@ -55,7 +55,7 @@ namespace Relicfall.Core.Utils
         /// <summary>
         /// Check if a point is within an isometric camera's visible area.
         /// </summary>
-        public static bool IsVisibleOnIsometricCamera(Vector3 worldPos, Camera cam, float margin = 0.1f)
+        public static bool IsVisibleOnIsometricCamera(Vector3 worldPos, UnityEngine.Camera cam, float margin = 0.1f)
         {
             var screenPos = cam.WorldToViewportPoint(worldPos);
             return screenPos.x >= -margin && screenPos.x <= 1f + margin &&

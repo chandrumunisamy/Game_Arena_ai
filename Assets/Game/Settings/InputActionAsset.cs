@@ -18,7 +18,7 @@ namespace Relicfall.Settings
 
         private void CreateDefaultAsset()
         {
-            ActionAsset = new InputActionAsset();
+            ActionAsset = ScriptableObject.CreateInstance<InputActionAsset>();
             ActionAsset.name = "RELICFALLControls";
 
             // Movement map

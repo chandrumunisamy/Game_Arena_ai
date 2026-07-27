@@ -124,19 +124,19 @@ namespace Relicfall.Settings
             switch (level)
             {
                 case 0: // No shadows
-                    QualitySettings.shadows = 0;
+                    QualitySettings.shadows = ShadowQuality.Disable;
                     break;
                 case 1: // Hard shadows only
-                    QualitySettings.shadows = 1;
-                    QualitySettings.shadowResolution = 0;
+                    QualitySettings.shadows = ShadowQuality.HardOnly;
+                    QualitySettings.shadowResolution = ShadowResolution.Low;
                     break;
                 case 2: // Soft shadows, medium
-                    QualitySettings.shadows = 2;
-                    QualitySettings.shadowResolution = 1;
+                    QualitySettings.shadows = ShadowQuality.All;
+                    QualitySettings.shadowResolution = ShadowResolution.Medium;
                     break;
                 case 3: // Soft shadows, high
-                    QualitySettings.shadows = 2;
-                    QualitySettings.shadowResolution = 2;
+                    QualitySettings.shadows = ShadowQuality.All;
+                    QualitySettings.shadowResolution = ShadowResolution.High;
                     break;
             }
             CurrentSettings.ShadowQuality = level;
@@ -161,9 +161,9 @@ namespace Relicfall.Settings
 
         public void SetRenderScale(float scale)
         {
-            if (_cameraData != null)
-                _cameraData.renderScale = scale;
-            CurrentSettings.RenderScale = scale;
+            // Render scale is a URP asset-level setting (UniversalRenderPipelineAsset.renderScale),
+            // not a per-camera setting, so we only persist it here.
+            CurrentSettings.RenderScale = Mathf.Clamp(scale, 0.1f, 2f);
         }
 
         public void SetMotionBlur(bool enabled)
