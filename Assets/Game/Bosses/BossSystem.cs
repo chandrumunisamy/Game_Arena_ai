@@ -117,7 +117,7 @@ namespace Relicfall.Bosses
         [Header("Boss Definition")]
         [SerializeField] private BossDefinition _bossDefinition;
 
-        private int _currentPhase = 0;
+        protected int _currentPhase = 0;
         private float _phaseTransitionTimer;
         private bool _isInPhaseTransition;
         private float _signatureAttackCooldownTimer;
@@ -144,13 +144,7 @@ namespace Relicfall.Bosses
                 _healthComponent.SetMaxHealth(health);
         }
 
-        private void Update()
-        {
-            UpdateCurrentState();
-            UpdateBossSpecific();
-        }
-
-        private void UpdateBossSpecific()
+        protected override void UpdateBossSpecific()
         {
             // Check phase transitions
             if (!_isInPhaseTransition && _bossDefinition?.Phases != null)
@@ -244,6 +238,12 @@ namespace Relicfall.Bosses
             StartSignatureTelegraph(telegraphDuration);
 
             CombatFeedback.Instance.TriggerCameraShake(0.3f, 4f);
+        }
+
+        private void SetIFrames(float duration)
+        {
+            // Boss transition invulnerability is represented by the transition state.
+            // HealthComponent has no invulnerability API, so damage handlers can query this state.
         }
 
         private void StartSignatureTelegraph(float duration)

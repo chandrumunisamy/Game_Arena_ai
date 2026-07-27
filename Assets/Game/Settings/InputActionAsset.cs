@@ -23,7 +23,7 @@ namespace Relicfall.Settings
 
             // Movement map
             var moveMap = ActionAsset.AddActionMap("PlayerMovement");
-            var moveAction = moveMap.AddAction("Move", ActionType.Value, "<Gamepad>/leftStick");
+            var moveAction = moveMap.AddAction("Move", InputActionType.Value, "<Gamepad>/leftStick");
             moveAction.AddCompositeBinding("Dpad")
                 .With("Up", "<Keyboard>/w")
                 .With("Down", "<Keyboard>/s")
@@ -32,39 +32,39 @@ namespace Relicfall.Settings
 
             // Combat map
             var combatMap = ActionAsset.AddActionMap("PlayerCombat");
-            combatMap.AddAction("LightAttack", ActionType.Button, "<Mouse>/leftButton")
+            combatMap.AddAction("LightAttack", InputActionType.Button, "<Mouse>/leftButton")
                 .AddBinding("<Gamepad>/buttonWest");
-            combatMap.AddAction("HeavyAttack", ActionType.Button, "<Mouse>/rightButton")
+            combatMap.AddAction("HeavyAttack", InputActionType.Button, "<Mouse>/rightButton")
                 .AddBinding("<Gamepad>/rightTrigger");
-            combatMap.AddAction("Dash", ActionType.Button, "<Keyboard>/space")
+            combatMap.AddAction("Dash", InputActionType.Button, "<Keyboard>/space")
                 .AddBinding("<Gamepad>/leftShoulder");
-            combatMap.AddAction("Parry", ActionType.Button, "<Keyboard>/shift")
+            combatMap.AddAction("Parry", InputActionType.Button, "<Keyboard>/shift")
                 .AddBinding("<Gamepad>/rightShoulder");
 
             // Abilities map
             var abilityMap = ActionAsset.AddActionMap("PlayerAbilities");
-            abilityMap.AddAction("RelicAbility", ActionType.Button, "<Keyboard>/q")
+            abilityMap.AddAction("RelicAbility", InputActionType.Button, "<Keyboard>/q")
                 .AddBinding("<Gamepad>/buttonNorth");
-            abilityMap.AddAction("SecondaryAbility", ActionType.Button, "<Keyboard>/e")
+            abilityMap.AddAction("SecondaryAbility", InputActionType.Button, "<Keyboard>/e")
                 .AddBinding("<Gamepad>/buttonEast");
-            abilityMap.AddAction("Ultimate", ActionType.Button, "<Keyboard>/r")
+            abilityMap.AddAction("Ultimate", InputActionType.Button, "<Keyboard>/r")
                 .AddBinding("<Gamepad>/leftTrigger");
 
             // Interaction map
             var interactMap = ActionAsset.AddActionMap("PlayerInteraction");
-            interactMap.AddAction("Interact", ActionType.Button, "<Keyboard>/f")
+            interactMap.AddAction("Interact", InputActionType.Button, "<Keyboard>/f")
                 .AddBinding("<Gamepad>/leftStickPress");
 
             // System map
             var systemMap = ActionAsset.AddActionMap("System");
-            systemMap.AddAction("Pause", ActionType.Button, "<Keyboard>/escape")
+            systemMap.AddAction("Pause", InputActionType.Button, "<Keyboard>/escape")
                 .AddBinding("<Gamepad>/start");
-            systemMap.AddAction("RunInfo", ActionType.Button, "<Keyboard>/tab")
+            systemMap.AddAction("RunInfo", InputActionType.Button, "<Keyboard>/tab")
                 .AddBinding("<Gamepad>/select");
 
             // Aim map
             var aimMap = ActionAsset.AddActionMap("PlayerAim");
-            aimMap.AddAction("Look", ActionType.Value, "<Mouse>/position")
+            aimMap.AddAction("Look", InputActionType.Value, "<Mouse>/position")
                 .AddBinding("<Gamepad>/rightStick");
 
             ActionAsset.Enable();

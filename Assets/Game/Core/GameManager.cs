@@ -276,7 +276,7 @@ namespace Relicfall.Core
             if (!_initialized) return;
 
             // Handle pause input
-            if (UnityEngine.InputSystem.InputSystem.GetKeyDown(UnityEngine.InputSystem.Key.Escape))
+            if (UnityEngine.InputSystem.Keyboard.current?.escapeKey.wasPressedThisFrame == true)
             {
                 TogglePause();
             }
